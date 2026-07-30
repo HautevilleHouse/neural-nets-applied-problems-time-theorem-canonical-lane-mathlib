@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean.NeuralNetworkCapacity
+import NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean.GradientDescentConvergence
+import NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean.UniversalApproximation
+import NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean.GeneralizationBound
+import NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean.TrainingTimeGuarantee
+
+namespace HautevilleHouse
+namespace NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean
+
+def ConstrainedNeuralNetsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_neural_nets_endgame (A : AdmissibleClass) : ConstrainedNeuralNetsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end NeuralNetsAppliedProblemsTimeTheoremCanonicalLaneLean
+end HautevilleHouse
